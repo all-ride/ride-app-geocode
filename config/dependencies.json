@@ -1,0 +1,110 @@
+{
+    "dependencies": [
+        {
+            "interfaces": "ride\\library\\geocode\\service\\GeocodeService",
+            "class": "ride\\library\\geocode\\service\\ChainGeocodeService",
+            "id": "address",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "scalar",
+                            "properties": {
+                                "value": "address"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "addService",
+                    "arguments": [
+                        {
+                            "name": "service",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\geocode\\service\\GoogleGeocodeService"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "addService",
+                    "arguments": [
+                        {
+                            "name": "service",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\geocode\\service\\ArcgisGeocodeService"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": "ride\\library\\geocode\\service\\GeocodeService",
+            "class": "ride\\library\\geocode\\service\\ChainGeocodeService",
+            "id": "ip",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "scalar",
+                            "properties": {
+                                "value": "ip"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "addService",
+                    "arguments": [
+                        {
+                            "name": "service",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\geocode\\service\\FreeGeoIpGeocodeService"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "ride\\library\\geocode\\Geocoder",
+            "id": "geocoder.address",
+            "calls": [
+                {
+                    "method": "addService",
+                    "arguments": [
+                        {
+                            "name": "service",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\geocode\\service\\GeocodeService",
+                                "id": "address"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "addService",
+                    "arguments": [
+                        {
+                            "name": "service",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\geocode\\service\\GeocodeService",
+                                "id": "ip"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
