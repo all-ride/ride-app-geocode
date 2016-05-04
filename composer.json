@@ -2,7 +2,7 @@
     "name": "ride/app-geocode",
     "description": "Geocode integration for the Ride application",
     "license": "MIT",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "authors": [
         {
             "name": "Joris Vandeweerd",
@@ -11,6 +11,6 @@
     ],
     "require": {
         "ride/app": ">=0.4.0",
-        "ride/lib-geocode": ">=0.1.0"
+        "ride/lib-geocode": ">=0.2.0"
     }
 }
