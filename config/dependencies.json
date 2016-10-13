@@ -1,6 +1,25 @@
 {
     "dependencies": [
         {
+            "interfaces": ["ride\\library\\geocode\\service\\GeocodeService", "ride\\library\\geocode\\service\\GoogleGeocodeService"],
+            "class": "ride\\library\\geocode\\service\\GoogleGeocodeService",
+            "id": "google",
+            "calls": [
+                {
+                    "method": "setApiKey",
+                    "arguments": [
+                        {
+                            "name": "apiKey",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "google.api.key"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "interfaces": "ride\\library\\geocode\\service\\GeocodeService",
             "class": "ride\\library\\geocode\\service\\ChainGeocodeService",
             "id": "address",
