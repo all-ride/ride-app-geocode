@@ -1,1 +1,1 @@
-google.api.key              API key for the google related api calls (Youtube, Geocode...)
+google.geocode.key              API key for the google related api calls (Youtube, Geocode... Only restring key on API, NOT referer!)

@@ -12,7 +12,7 @@
                             "name": "apiKey",
                             "type": "parameter",
                             "properties": {
-                                "key": "google.api.key"
+                                "key": "google.geocode.key"
                             }
                         }
                     ]
